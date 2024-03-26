@@ -20,7 +20,7 @@ def dfs(x):
 n = int(input())
 # 三个数组分别表示列、主对角线、副对角线是否被标记
 vis1= [False] * (n+1)
-vis2 = [False] * (2*n+1)
+vis2 = [False] * (2*n+1)# 主对角线，是对每一个点可能都有对角线的位置，所以是2*n+1
 vis3 = [False] * (2*n+1)
 ans = 0
 dfs(1)
