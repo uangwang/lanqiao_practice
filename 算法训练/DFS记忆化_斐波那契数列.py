@@ -9,3 +9,4 @@ def dfs(n):
 
 n = int(input())
 print(dfs(n))
+print(dic)
