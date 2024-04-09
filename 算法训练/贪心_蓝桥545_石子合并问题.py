@@ -13,3 +13,19 @@ while len(a) >= 2:
     ans += x+y
 print(ans)
 
+# 堆更慢，因为堆的操作是O(logn)，而排序是O(nlogn)
+
+# 不用堆
+# n = int(input())
+# a = list(map(int,input().split()))
+
+# ans = 0
+
+# while len(a) >= 2:
+#   a.sort()
+#   x = a.pop(0)
+#   y = a.pop(0)
+#   a.append(x+y)
+
+#   ans += x+y
+# print(ans)

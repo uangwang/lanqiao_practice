@@ -1,24 +1,26 @@
-n, m = map(int, input().split())
-a = []
-b = [[0] * m for i in range(n)]
+import os
+import sys
 
-# 使用列表生成式初始化 a
-for i in range(n):
-    a.append(list(map(int, input().split())))
+# 请在此输入您的代码
+n , B = map(int,input().split())
+li = list(map(int,input().split()))
+cnt=0
+res = []
+for i in range(n-1):
+  if li[i] % 2 == 0:
+    cnt += 1
+  else:
+    cnt -= 1
+  if cnt ==0:
+    res.append(abs(li[i+1]-li[i]))
 
-dir = [(0, 1), (0, -1), (-1, 0), (1, 0), (-1, 1), (1, 1), (1, -1), (-1, -1), (0, 0)]
+res.sort()
+ans = 0
+for i in res:
+  if B >= i:
+    ans += 1
+    B -= i
+  else:
+    break
 
-for i in range(n):
-    for j in range(m):
-        cnt, tot = 0, 0
-        # for k in range(8):
-        #     x, y = i + dir[k][0], j + dir[k][1]
-        for delta_x in [-1, 0, 1]:
-            for delta_y in [-1, 0, 1]:
-                x, y = i + delta_x, j + delta_y
-                if 0 <= x < n and 0 <= y < m:
-                    tot += a[x][y]
-                    cnt += 1
-        b[i][j] = tot // cnt
-
-
+print(ans)
